@@ -3,8 +3,17 @@ import 'package:bytebank/screens/dashboard/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-void main() => runApp(ChangeNotifierProvider(
-      create: (context) => Saldo(0),
+import 'models/transferencias.dart';
+
+void main() => runApp(MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => Saldo(0),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => Transferencias(),
+        ),
+      ],
       child: BytebankApp(),
     ));
 
