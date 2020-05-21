@@ -1,8 +1,10 @@
 import 'package:bytebank/models/transferencias.dart';
-import 'package:bytebank/screens/transferencia/lista.dart';
+import 'package:bytebank/screens/extrato/lista.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import 'item.dart';
 
 final _titulo = 'Últimas transferências';
 final _conteudoBotao = 'Visualizar todas';
@@ -53,13 +55,7 @@ class UltimasTransferencias extends StatelessWidget {
                 final _valor = _transferencia.toStringValor();
                 final _conta = _transferencia.toStringConta();
 
-                return Card(
-                  child: ListTile(
-                    leading: Icon(Icons.monetization_on),
-                    title: Text(_valor),
-                    subtitle: Text(_conta),
-                  ),
-                );
+                return Item.transferencia(_valor, _conta);
               },
             );
           },
@@ -70,7 +66,7 @@ class UltimasTransferencias extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) {
-                return ListaTransferencias();
+                return ListaMovimentacoes();
               }),
             );
           },

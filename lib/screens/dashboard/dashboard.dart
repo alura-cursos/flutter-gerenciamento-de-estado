@@ -1,9 +1,8 @@
-import 'package:bytebank/models/saldo.dart';
 import 'package:bytebank/screens/dashboard/saldo.dart';
+import 'package:bytebank/screens/deposito/formulario.dart';
+import 'package:bytebank/screens/extrato/ultimas.dart';
 import 'package:bytebank/screens/transferencia/formulario.dart';
-import 'package:bytebank/screens/transferencia/ultimas.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class Dashboard extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -24,7 +23,12 @@ class Dashboard extends StatelessWidget {
                 color: Colors.green,
                 child: Text('Recebe valor'),
                 onPressed: () {
-                  Provider.of<Saldo>(context, listen: false).adiciona(10);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) {
+                      return FormularioDeposito();
+                    }),
+                  );
                 },
               ),
               RaisedButton(
