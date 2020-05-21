@@ -2,11 +2,9 @@ import 'package:bytebank/models/transferencia.dart';
 import 'package:flutter/material.dart';
 
 class Transferencias extends ChangeNotifier {
-  final List<Transferencia> transferencias = [new Transferencia((10), 1242)];
+  final List<Transferencia> _transferencias = [];
 
-  lista() {
-    return transferencias;
-  }
+  List<Transferencia> get transferencias => _transferencias;
 
   adiciona(Transferencia novaTransferencia) {
     transferencias.add(novaTransferencia);

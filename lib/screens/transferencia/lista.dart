@@ -16,9 +16,9 @@ class ListaTransferencias extends StatelessWidget {
       body: Consumer<Transferencias>(
         builder: (context, transferencias, child) {
           return ListView.builder(
-            itemCount: transferencias.lista().length,
+            itemCount: transferencias.transferencias.length,
             itemBuilder: (context, indice) {
-              final transferencia = transferencias.lista()[indice];
+              final transferencia = transferencias.transferencias[indice];
               return ItemTransferencia(transferencia);
             },
           );
