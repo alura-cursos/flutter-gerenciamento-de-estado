@@ -10,6 +10,8 @@ class UltimasTransferencias extends StatelessWidget {
         Text('Últimas transferências'),
         Consumer<Transferencias>(
           builder: (context, transferencias, child) {
+            final _ultimasTransferencias =
+                transferencias.lista().reversed.toList();
             final quantidade = transferencias.lista().length;
             int tamanho;
 
@@ -24,7 +26,7 @@ class UltimasTransferencias extends StatelessWidget {
               shrinkWrap: true,
               itemCount: tamanho,
               itemBuilder: (context, indice) {
-                final transferencia = transferencias.lista()[indice];
+                final transferencia = _ultimasTransferencias[indice];
                 final valor = transferencia.toStringValor();
                 final conta = transferencia.toStringConta();
 
