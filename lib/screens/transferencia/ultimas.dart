@@ -3,20 +3,23 @@ import 'package:bytebank/screens/transferencia/lista.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+final _titulo = 'Últimas transferências';
+final _conteudoBotao = 'Visualizar todas';
+
 class UltimasTransferencias extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Text('Últimas transferências'),
+        Text(_titulo),
         Consumer<Transferencias>(
           builder: (context, transferencias, child) {
             final _ultimasTransferencias =
                 transferencias.lista().reversed.toList();
-            final quantidade = transferencias.lista().length;
+            final _quantidade = transferencias.lista().length;
             int tamanho;
 
-            if (quantidade < 3) {
-              tamanho = quantidade;
+            if (_quantidade < 3) {
+              tamanho = _quantidade;
             } else {
               tamanho = 2;
             }
@@ -26,15 +29,15 @@ class UltimasTransferencias extends StatelessWidget {
               shrinkWrap: true,
               itemCount: tamanho,
               itemBuilder: (context, indice) {
-                final transferencia = _ultimasTransferencias[indice];
-                final valor = transferencia.toStringValor();
-                final conta = transferencia.toStringConta();
+                final _transferencia = _ultimasTransferencias[indice];
+                final _valor = _transferencia.toStringValor();
+                final _conta = _transferencia.toStringConta();
 
                 return Card(
                   child: ListTile(
                     leading: Icon(Icons.monetization_on),
-                    title: Text(valor),
-                    subtitle: Text(conta),
+                    title: Text(_valor),
+                    subtitle: Text(_conta),
                   ),
                 );
               },
@@ -51,7 +54,7 @@ class UltimasTransferencias extends StatelessWidget {
               }),
             );
           },
-          child: Text('Visualizar todas'),
+          child: Text(_conteudoBotao),
         )
       ],
     );
