@@ -1,5 +1,6 @@
 import 'package:bytebank/models/saldo.dart';
 import 'package:bytebank/screens/dashboard/saldo.dart';
+import 'package:bytebank/screens/transferencia/formulario.dart';
 import 'package:bytebank/screens/transferencia/ultimas.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -30,7 +31,12 @@ class Dashboard extends StatelessWidget {
                 color: Colors.green,
                 child: Text('Nova Transferência'),
                 onPressed: () {
-                  Provider.of<Saldo>(context, listen: false).subtrai(10);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) {
+                      return FormularioTransferencia();
+                    }),
+                  );
                 },
               ),
             ],

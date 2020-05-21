@@ -12,10 +12,10 @@ class UltimasTransferencias extends StatelessWidget {
             final quantidade = transferencias.lista().length;
             int tamanho;
 
-            if (quantidade <= 3) {
+            if (quantidade < 3) {
               tamanho = quantidade;
             } else {
-              tamanho = transferencias.lista().sublist(quantidade - 2);
+              tamanho = 2;
             }
 
             return ListView.builder(
