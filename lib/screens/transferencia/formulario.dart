@@ -15,13 +15,6 @@ const _dicaCampoNumeroConta = '0000';
 
 const _textoBotaoConfirmar = 'Confirmar';
 
-//class FormularioTransferencia extends StatefulWidget {
-//  @override
-//  State<StatefulWidget> createState() {
-//    return FormularioTransferenciaState();
-//  }
-//}
-
 class FormularioTransferencia extends StatelessWidget {
   final TextEditingController _controladorCampoNumeroConta =
       TextEditingController();

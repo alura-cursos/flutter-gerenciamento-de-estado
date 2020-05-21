@@ -1,4 +1,5 @@
 import 'package:bytebank/models/transferencias.dart';
+import 'package:bytebank/screens/transferencia/lista.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -40,7 +41,14 @@ class UltimasTransferencias extends StatelessWidget {
         ),
         FlatButton(
           color: Colors.green,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) {
+                return ListaTransferencias();
+              }),
+            );
+          },
           child: Text('Visualizar todas'),
         )
       ],
