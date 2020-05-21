@@ -9,13 +9,23 @@ class UltimasTransferencias extends StatelessWidget {
         Text('Últimas transferências'),
         Consumer<Transferencias>(
           builder: (context, transferencias, child) {
+            final quantidade = transferencias.lista().length;
+            int tamanho;
+
+            if (quantidade <= 3) {
+              tamanho = quantidade;
+            } else {
+              tamanho = transferencias.lista().sublist(quantidade - 2);
+            }
+
             return ListView.builder(
               padding: const EdgeInsets.all(8),
               shrinkWrap: true,
-              itemCount: transferencias.lista().length,
+              itemCount: tamanho,
               itemBuilder: (context, indice) {
-                final valor = transferencias.lista()[indice].toStringValor();
-                final conta = transferencias.lista()[indice].toStringConta();
+                final transferencia = transferencias.lista()[indice];
+                final valor = transferencia.toStringValor();
+                final conta = transferencia.toStringConta();
 
                 return Card(
                   child: ListTile(
