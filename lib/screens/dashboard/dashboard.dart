@@ -19,9 +19,11 @@ class Dashboard extends StatelessWidget {
           ButtonBar(
             alignment: MainAxisAlignment.center,
             children: <Widget>[
-              RaisedButton(
-                color: Colors.green,
+              ElevatedButton(
                 child: Text('Recebe valor'),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.green,
+                ),
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -31,9 +33,12 @@ class Dashboard extends StatelessWidget {
                   );
                 },
               ),
-              RaisedButton(
-                color: Colors.green,
+
+              ElevatedButton(
                 child: Text('Nova Transferência'),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.green,
+                ),
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -42,7 +47,7 @@ class Dashboard extends StatelessWidget {
                     }),
                   );
                 },
-              ),
+              )
             ],
           ),
           UltimasTransferencias()
