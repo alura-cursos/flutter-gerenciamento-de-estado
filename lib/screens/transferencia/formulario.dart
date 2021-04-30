@@ -44,7 +44,7 @@ class FormularioTransferenciaState extends State<FormularioTransferencia> {
                 rotulo: _rotuloCampoValor,
                 icone: Icons.monetization_on,
               ),
-              RaisedButton(
+              ElevatedButton(
                 child: Text(_textoBotaoConfirmar),
                 onPressed: () => _criaTransferencia(context),
               ),
