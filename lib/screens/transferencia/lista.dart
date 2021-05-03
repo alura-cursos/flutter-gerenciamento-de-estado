@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 const _tituloAppBar = 'Transferências';
 
 class ListaTransferencias extends StatefulWidget {
-  final List<Transferencia> _transferencias = List();
+  final List<Transferencia> _transferencias = [];
 
   @override
   State<StatefulWidget> createState() {
