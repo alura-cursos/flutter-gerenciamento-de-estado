@@ -60,8 +60,11 @@ class UltimasTransferencias extends StatelessWidget {
             );
           },
         ),
-        FlatButton(
-          color: Colors.green,
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            primary: Colors.green,
+          ),
+          child: Text(_conteudoBotao),
           onPressed: () {
             Navigator.push(
               context,
@@ -70,8 +73,7 @@ class UltimasTransferencias extends StatelessWidget {
               }),
             );
           },
-          child: Text(_conteudoBotao),
-        )
+        ),
       ],
     );
   }
